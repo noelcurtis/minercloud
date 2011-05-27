@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110524001951) do
+ActiveRecord::Schema.define(:version => 20110527031650) do
+
+  create_table "shares", :force => true do |t|
+    t.integer  "time"
+    t.string   "rem_host"
+    t.string   "our_result"
+    t.string   "upstream_result"
+    t.text     "reason"
+    t.text     "solution"
+    t.integer  "worker_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false
@@ -29,5 +41,13 @@ ActiveRecord::Schema.define(:version => 20110524001951) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "workers", :force => true do |t|
+    t.string   "username"
+    t.string   "password"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

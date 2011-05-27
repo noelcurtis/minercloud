@@ -1,6 +1,9 @@
 Minercloud::Application.routes.draw do
   
   devise_for :users
+  
+  resources :workers
+  resources :shares
 
   root :to => "pages#home"
   # The priority is based upon order of creation:

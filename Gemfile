@@ -4,6 +4,7 @@ gem 'rails', '3.0.7'
 gem 'sqlite3'
 gem 'devise', '1.3.4'
 gem 'rake', '~> 0.8.7' # using 0.8.7 till 0.9.0 is fixed
+gem 'haml', '3.1.1'
 
 group :development do
   gem 'rspec-rails', '2.6.0'
