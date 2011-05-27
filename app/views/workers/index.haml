@@ -1,0 +1,11 @@
+%h1 Listing Workers
+= @workers
+%table
+  %tr
+    %th Username
+    %th Password
+  - @workers.each do |worker|
+    %tr
+      %td= worker.username
+      %td= worker.password
+      

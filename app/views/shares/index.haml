@@ -1,0 +1,20 @@
+%h1 Listing Shares
+
+%table
+  %tr
+    %th Time
+    %th Worker ID
+    %th Rem Host
+    %th Our Result
+    %th Upstream Result
+    %th Reason
+    %th Solution
+  - @shares.each do |share|
+    %tr
+      %td= share.time
+      %td= share.worker_id
+      %th= share.rem_host
+      %th= share.our_result
+      %th= share.upstream_result
+      %th= share.reason
+      %th= share.solution
