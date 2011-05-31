@@ -1,5 +1,5 @@
 %h1 Your Workers
-= @workers
+
 %table
   %tr
     %th Username
@@ -8,3 +8,5 @@
     %tr
       %td= worker.username
       %td= worker.password
+
+= button_to "Create new worker...", new_worker_path, :method => :get

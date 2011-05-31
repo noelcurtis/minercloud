@@ -1,11 +1,11 @@
 <h2>Create a worker..</h2>
 
 <%= form_for :worker, :url => {:action => "create"}  do |f|%>
-<%=f.label :username%>
-<%=f.text_field :username%>
+  <%=f.label :username%> </br>
+  <%=f.text_field :username%> </br>
 
-<%=f.label :password%>
-<%=f.text_field :password%>
+  <%=f.label :password%> </br>
+  <%=f.text_field :password%>  </br>
 
-<%=f.submit "Create Worker.."%>
+  <%=f.submit "Create Worker"%>
 <%end%>
