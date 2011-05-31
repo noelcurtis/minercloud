@@ -1,0 +1,11 @@
+<h2>Create a worker..</h2>
+
+<%= form_for :worker, :url => {:action => "create"}  do |f|%>
+<%=f.label :username%>
+<%=f.text_field :username%>
+
+<%=f.label :password%>
+<%=f.text_field :password%>
+
+<%=f.submit "Create Worker.."%>
+<%end%>

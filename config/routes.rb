@@ -6,6 +6,11 @@ Minercloud::Application.routes.draw do
   resources :shares
 
   root :to => "pages#home"
+
+  namespace :user do
+    root :to => "workers#index"
+end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
