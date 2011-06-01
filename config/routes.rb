@@ -10,9 +10,9 @@ Minercloud::Application.routes.draw do
 
   root :to => "pages#home"
 
-  namespace :user do
-    root :to => "users#show"
-  end
+  #namespace :user do
+  #  root :to => "users#show"
+  #end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

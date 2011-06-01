@@ -11,8 +11,9 @@ class WorkersController < ApplicationController
   def create
     @worker = current_user.workers.build(params[:worker])
     if @worker.save
-      flash[:success] = "Worker Created!"
-      redirect_to settings_path
+      redirect_to current_user, :flash => {:success => "New worker created!"}
+    else
+      render "new"
     end
   end
 
