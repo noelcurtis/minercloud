@@ -12,7 +12,7 @@ class WorkersController < ApplicationController
     @worker = current_user.workers.build(params[:worker])
     if @worker.save
       flash[:success] = "Worker Created!"
-      redirect_to workers_path
+      redirect_to settings_path
     end
   end
 

@@ -1,0 +1,9 @@
+%h1= @user.email
+
+%h3 All your workers...
+%table
+   %th Username
+   %th Password
+   = render @workers
+
+= button_to "Create new worker...", new_worker_path, :method => :get

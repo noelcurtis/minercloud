@@ -2,14 +2,17 @@ Minercloud::Application.routes.draw do
   
   devise_for :users
   
-  resources :workers
+  resources :workers, :only => [:new, :create]
   resources :shares
+  resources :users, :only => [:show]
+
+  match '/settings', :to=> 'users#show'
 
   root :to => "pages#home"
 
   namespace :user do
-    root :to => "workers#index"
-end
+    root :to => "users#show"
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
