@@ -1,5 +1,6 @@
 class WorkersController < ApplicationController
   before_filter :authenticate_user!, :only => [:index, :create]
+
   def index
     @workers = current_user.workers
     
@@ -14,6 +15,14 @@ class WorkersController < ApplicationController
       redirect_to current_user, :flash => {:success => "New worker created!"}
     else
       render "new"
+    end
+  end
+
+  def show
+    @worker = Worker.find(params[:id])
+
+    respond_to do |format|
+      format.html
     end
   end
 

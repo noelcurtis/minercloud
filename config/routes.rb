@@ -2,12 +2,11 @@ Minercloud::Application.routes.draw do
   
   devise_for :users
   
-  resources :workers, :only => [:new, :create]
+  resources :workers, :only => [:new, :create, :show]
   resources :shares
   resources :users, :only => [:show]
 
-  match '/settings', :to=> 'users#show'
-
+  #match '/settings', :to=> "users#show"
   root :to => "pages#home"
 
   #namespace :user do
