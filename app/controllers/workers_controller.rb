@@ -19,10 +19,14 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @worker = Worker.find(params[:id])
-
-    respond_to do |format|
-      format.html
+    @found_worker = Worker.find(params[:id])
+    if current_user.workers.exists?(@found_worker)
+      @worker = @found_worker
+      respond_to do |format|
+        format.html
+      end
+    else
+      redirect_to root_path
     end
   end
 
