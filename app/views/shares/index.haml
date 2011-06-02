@@ -2,7 +2,7 @@
 
 %table
   %tr
-    %th Time
+    %th Created At
     %th Rem Host
     %th Our Result
     %th Upstream Result
@@ -10,7 +10,7 @@
     %th Solution
   - @shares.each do |share|
     %tr
-      %td= share.time
+      %td= share.created_at
       %td= share.worker_id
       %th= share.rem_host
       %th= share.our_result
