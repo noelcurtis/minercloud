@@ -10,18 +10,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110527031650) do
+ActiveRecord::Schema.define(:version => 20110604194243) do
+
+  create_table "blocks", :force => true do |t|
+    t.integer   "number"
+    t.integer   "shares"
+    t.integer   "duration"
+    t.string    "category"
+    t.integer   "confirmations"
+    t.integer   "worker_id"
+    t.datetime  "updated_at"
+    t.timestamp "created_at",    :null => false
+  end
 
   create_table "shares", :force => true do |t|
-    t.integer  "time"
-    t.string   "rem_host"
-    t.string   "our_result"
-    t.string   "upstream_result"
-    t.text     "reason"
-    t.text     "solution"
-    t.integer  "worker_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "rem_host"
+    t.string    "our_result"
+    t.string    "upstream_result"
+    t.text      "reason"
+    t.text      "solution"
+    t.integer   "worker_id"
+    t.timestamp "created_at",                         :null => false
+    t.boolean   "processed",       :default => false, :null => false
   end
 
   create_table "users", :force => true do |t|
