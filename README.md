@@ -16,3 +16,4 @@ Front-end to a pushpool server. It is responsible for allowing users to create a
   * rake db:migrate
   * rails s
   * point your web browser to http://localhost:3000 and you should see minercloud
+  *
